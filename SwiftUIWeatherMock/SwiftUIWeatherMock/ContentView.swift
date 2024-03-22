@@ -10,8 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea()
+            BackgroundView(topColor: .blue, bottomColor: .white)
             
             VStack {
                 Text("Cupertino, CA")
@@ -54,30 +53,4 @@ struct ContentView: View {
     ContentView()
 }
 
-struct WeatherDayView: View {
-    var dayOfWeek: String
-    var imageName: String
-    var temperature: Int
-    
-    var body: some View {
-        VStack {
-            Text(dayOfWeek)
-                .font(.system(size: 18, weight: .medium, design: .default))
-                .foregroundColor(.white)
-                .padding()
-            
-            Image(systemName: imageName)
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
-            
-            Text("\(temperature)°")
-                .font(.system(size: 28, weight: .medium))
-                .foregroundColor(.white)
-            
-            Spacer()
-            
-        }
-    }
-}
+
